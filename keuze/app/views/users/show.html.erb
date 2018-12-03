@@ -1,0 +1,10 @@
+<% provide(:title, 'profiel') %>
+<div id="inhoud">
+	<%= @user.name %>,
+	<%= @user.email %>,
+	<%= @user.created_at %>,
+	<%= @user.updated_at %>
+	<br>
+	<br>
+	<%= Time.now %>
+</div>

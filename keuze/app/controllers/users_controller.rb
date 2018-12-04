@@ -4,6 +4,11 @@ class UsersController < ApplicationController
 
   end
 
+  def user_params
+      	params.require(:user).permit(:image)
+  end
+
   def new
+  	@user = User.new
   end
 end

@@ -1,4 +1,27 @@
 <% provide(:title, 'Sign up') %>
 <div id="inhoud">
-<p>This will be a signup page for new users.</p>
+	<%= form_for(@user) do |f| %>
+		<p>
+			<%= f.label :name %>
+		</p>
+		<%= f.text_field :name %>
+		<p>
+			<%= f.label :email %>
+		</p>
+		<%= f.email_field :email %>
+		<p>
+			<%= f.label :password %>
+		</p>
+		<%= f.password_field :password %>
+		<p>
+			<%= f.label :password_confirmation, "Confirmation" %>
+		</p>
+		<%= f.password_field :password %>
+		<p>
+			<%= f.label :image %>
+		</p>
+		<%= f.file_field :image %>
+		<br/><br/>
+		<%= f.submit "Create my acount", class: "submit" %>
+	<% end %>
 </div>

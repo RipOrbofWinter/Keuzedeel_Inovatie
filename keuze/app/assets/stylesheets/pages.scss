@@ -214,3 +214,36 @@ li {
   margin-top: 45px;
   @include box_sizing;
 }
+
+/* forms */
+form{
+    margin: auto;
+    width: 460px;
+    
+}
+
+input, textarea, select, .uneditable-input {
+    margin-left: 10%;
+    margin-right: 10%;
+    color: white;
+    background-color: $lightC;
+    border: 1px solid #bbb;
+    width: 80%;
+    margin-bottom: 15px;
+    @include box_sizing;
+}
+
+input.submit{
+    font-size: 17pt;
+    height: 38px;
+    background-color: $siteC;
+}
+
+input {
+  height: auto;
+}
+p{
+    text-align: center;
+    font-size: 15pt;
+    line-height: 100%;
+}

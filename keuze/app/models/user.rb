@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+	has_one_attached :image
 	before_save { self.email = email.downcase }
 	validates :name,  presence: true, length: { maximum: 50 }
 	#REGEX matching language for more look at http://www.rubular.com/

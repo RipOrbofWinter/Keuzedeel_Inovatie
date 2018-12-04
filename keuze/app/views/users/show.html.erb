@@ -1,10 +1,17 @@
 <% provide(:title, 'profiel') %>
+
 <div id="inhoud">
-	<%= @user.name %>,
-	<%= @user.email %>,
-	<%= @user.created_at %>,
-	<%= @user.updated_at %>
-	<br>
-	<br>
-	<%= Time.now %>
+	<div id="pic">
+		<%= link_to image_tag("anon.png"), list_path %>
+		<% if false %>	<%= link_to image_tag(@user.image), root_path %>, <% end %>
+	</div>
+	<div class="post">
+		<aside>
+			<section>
+				<h1>
+					<%= @user.name %>
+				</h1>
+			</section>
+		</aside>
+	</div>
 </div>

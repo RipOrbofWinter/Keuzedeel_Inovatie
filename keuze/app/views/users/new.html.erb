@@ -5,23 +5,29 @@
 			<%= f.label :name %>
 		</p>
 		<%= f.text_field :name %>
+
 		<p>
 			<%= f.label :email %>
 		</p>
 		<%= f.email_field :email %>
+
 		<p>
 			<%= f.label :password %>
 		</p>
 		<%= f.password_field :password %>
+
 		<p>
 			<%= f.label :password_confirmation, "Confirmation" %>
 		</p>
-		<%= f.password_field :password %>
+		<%= f.password_field :password_confirmation %>
+
 		<p>
 			<%= f.label :image %>
 		</p>
 		<%= f.file_field :image %>
+
 		<br/><br/>
-		<%= f.submit "Create my acount", class: "submit" %>
+		<%= f.submit "Create acount", class: "submit" %>
+		
 	<% end %>
 </div>

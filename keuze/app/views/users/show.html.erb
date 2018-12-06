@@ -2,8 +2,7 @@
 
 <div id="inhoud">
 	<div id="pic">
-		<%= link_to image_tag("anon.png"), list_path %>
-		<% if false %>	<%= link_to image_tag(@user.image), root_path %>, <% end %>
+		<%= link_to image_tag(@user.image), root_path %>
 	</div>
 	<div class="post">
 		<aside>
@@ -14,4 +13,7 @@
 			</section>
 		</aside>
 	</div>
+	<% flash.each do |message_type, message| %>
+       	<div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
 </div>

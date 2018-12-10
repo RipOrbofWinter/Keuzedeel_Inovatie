@@ -47,7 +47,7 @@ group :development, :test do
   gem 'sqlite3'
 end
 
-group :producttion do
+group :production do
   gem 'pg', '0.20.0'
 end
 

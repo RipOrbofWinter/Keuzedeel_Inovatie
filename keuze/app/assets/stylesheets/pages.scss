@@ -28,14 +28,28 @@ a{
     text-decoration: none;
 }
 
+p{
+    text-align: left;
+    font-size: 15pt;
+    line-height: 100%;
+}
+
 .post{
-    margin-left: 125px;
+    margin-left: 15px;
     margin-top: 15px;
     margin-right: 15px;
+    
+    header{
+    position: initial;
+    margin-left: 125px;
+    line-height: 110%;
+    font-weight: bold;
+    font-size: 14pt;
+    }
 
     p{
+    font-size: 13pt;
     line-height: 110%;
-    font-family: 'Open Sans', sans-serif;
     }
 
 }
@@ -52,9 +66,10 @@ a{
     width: 100px;
 }
 
-header{
-    grid-column: 1 / end;
-    grid-row: 1 / 2;
+.navMenu{
+    height: 45px;
+    width: 100%;
+    position: fixed;
 }
 
 nav{
@@ -97,11 +112,22 @@ li {
     grid-column: 3 / 4;
     grid-row: 3 / 4;
     background-color: $lightC;
+    h1{
+        text-align: center;
+    }
+}
+
+#inhoudBreak{
+    grid-column: 3 / 4;
+    grid-row: 4 / 5;
 }
 
 #chat-block{
-    grid-column: 5 / end;
-    grid-row: 2 / 5;
+    height: 100%;
+    width: 340px;
+    margin-left: calc(100% - 340px);
+    margin-top: 45px;
+    position: fixed;
     background-color: $lightC;
     border-color: $siteC;
     border-left-style: solid;
@@ -116,8 +142,10 @@ li {
     display: grid;
     grid-template-columns: 10% 80% 10%;
     grid-template-rows: repeat(20, 5%);
-    grid-column: 1 / 2;
-    grid-row: 2 / 5;
+    height: 100%;
+    width: 240px;
+    margin-top: 45px;
+    position: fixed;
     background-color: $lightC;
     border-right-style: solid;
     border-color: $siteC;
@@ -145,7 +173,7 @@ li {
     border-bottom-style: solid;
     border-color: $siteC;
     border-width: 2px;
-
+    line-height: 100%;
 }
 
 #friendlistTitle{
@@ -167,6 +195,12 @@ li {
     line-height: 99%;
 }
 
+.droptitle{
+    p{
+        text-align: center;
+        line-height: 10%;
+    }
+}
 
 @media only screen and (max-width: 1300px){
     .dropmenu{
@@ -229,7 +263,6 @@ input, textarea, select, .uneditable-input {
     background-color: $lightC;
     border: 1px solid #bbb;
     width: 80%;
-    margin-bottom: 15px;
     @include box_sizing;
 }
 
@@ -242,10 +275,14 @@ input.submit{
 input {
   height: auto;
 }
-p{
+.formParagraph{
+    form >p{
+        text-align: center;
+    }
+}
+
+.formParagraph > p{
     text-align: center;
-    font-size: 15pt;
-    line-height: 100%;
 }
 
 #error_explanation {

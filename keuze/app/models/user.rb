@@ -9,4 +9,10 @@ class User < ApplicationRecord
 	                  uniqueness: { case_sensitive: false }
     has_secure_password
   	validates :password, presence: true, length: { minimum: 6 }
+
+  # Remembers a user in the database for use in persistent sessions.
+  def remember
+    self.remember_token = User.new_token
+    update_attribute(:remember_digest, User.digest(remember_token))
+  end
 end

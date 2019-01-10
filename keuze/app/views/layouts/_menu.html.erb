@@ -1,0 +1,28 @@
+<div id="menu">
+    <div id="followedTitle" class="droptitle">
+        <p>Threads</p>
+    </div>
+    <div id="followed" >
+        <br />
+        <%= link_to "Thread 1",   root_path, { :class=>"dropmenu" } %>
+        <br />
+        <%= link_to "Maximumthread 2",   root_path, { :class=>"dropmenu" } %>
+        <br />
+    </div>
+    <div id="followedMore" class="dropmenu">
+    	<br /><a href="#">Show more</a>
+    </div>
+    <div id="friendlistTitle" class="droptitle">
+        <p>Friends</p>
+    </div>
+    <div id="friendlist">
+    	<br />
+        <%= link_to image_tag("anon.png"),' http://localhost:3000', { :class=>"dropimg" }%>
+        <%= link_to "Max Verstappen",   root_path, { :class=>"dropmenu" } %>
+        <br />
+        <br />
+        <%= link_to image_tag("anon.png"),'http://localhost:3000', { :class=>"dropimg" }%>
+        <%= link_to "Maxmoefoevidgae",   root_path, { :class=>"dropmenu" }%>
+        <br/>
+   	</div>
+</div>

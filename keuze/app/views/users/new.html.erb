@@ -1,0 +1,12 @@
+<% provide(:title, 'Sign up') %>
+<div id="inhoud">
+	<h1>Sign up</h1>
+		<%= render 'users/form' %>
+		<%= f.submit "Create acount", class: "submit" %>	
+		<p>Existing user?</p>
+		<p><%= link_to "Login to your acount here!", login_path, class: "signLink" %></p>
+		<% end %>
+	</div>
+</div>
+<div id="inhoudBreak">
+</div>

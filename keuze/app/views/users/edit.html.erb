@@ -1,11 +1,23 @@
 <% provide(:title, "Edit user") %>
 <div id="inhoud">
-  <h1>Update your profile</h1>
+  	<h1>Update your profile</h1>
     <div class="formParagraph">
-      <%= render 'users/form' %>
-      <%= f.submit "Save changes", class: "submit" %>
-    <% end %>
-  </div>
+	  	<%= form_for(@user) do |f| %>
+		    <%= render 'shared/error_messages' %>
+		    <p><%= f.label :name %></p>
+		    <%= f.text_field :name, class: 'form-control' %>
+		    <p><%= f.label :email %></p>
+		    <%= f.email_field :email, class: 'form-control' %>
+		    <p><%= f.label :password %></p>
+		    <%= f.password_field :password, class: 'form-control' %>
+		    <p><%= f.label :password_confirmation, "Confirmation" %></p>
+		    <%= f.password_field :password_confirmation, class: 'form-control' %>
+		    <p><%= f.label :image %></p>
+		    <%= f.file_field :image, class: 'form-control' %>
+		    <br/><br/>
+		      <%= f.submit "Save changes", class: "submit" %>
+    	<% end %>
+  	</div>
 </div>
 <div id="inhoudBreak">
 </div>

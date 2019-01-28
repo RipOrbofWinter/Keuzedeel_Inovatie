@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'spelers/new'
   root	'pages#Home'
  	get 	'/signup',  to: 'users#new'
     get     '/login',   to: 'sessions#new'

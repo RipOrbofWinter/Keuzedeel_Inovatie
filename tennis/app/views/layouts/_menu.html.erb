@@ -2,4 +2,35 @@
     <div id="followedTitle" class="droptitle">
         <p>Menu</p>
     </div>
+    <% if logged_in? %>
+    	<div id="menu_links" >
+        <br />
+        <li class="dropdown_menu">
+            <a href="#" class="dropdown-toggle">Spelers</a>
+            <ul class="dropdown-content_menu">
+                <li><%= link_to "Overzicht",    showSpelers_path %></li>
+                <li><%= link_to "Nieuwe",       newSpelers_path %></li>
+                <li class="divider"></li>
+            </ul>
+        </li>
+        <br /><br />
+        <li class="dropdown_menu">
+            <a href="#" class="dropdown-toggle">School</a>
+            <ul class="dropdown-content_menu">
+                <li><%= link_to "Overzicht", showSchool_path %></li>
+                <li><%= link_to "Nieuwe", newSchool_path %></li>
+                <li class="divider"></li>
+            </ul>
+        </li>
+        <br /><br />
+        <li class="dropdown_menu">
+            <a href="#" class="dropdown-toggle">Aanmeldingen</a>
+            <ul class="dropdown-content_menu">
+                <li><%= link_to "Overzicht", showAan_path %></li>
+                <li><%= link_to "Nieuwe", newAan_path %></li>
+                <li class="divider"></li>
+            </ul>
+        </li>
+    </div>
+    <% end %>
 </div>

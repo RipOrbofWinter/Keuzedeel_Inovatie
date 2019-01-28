@@ -1,10 +1,9 @@
-<% provide(:title, 'Aanmeldingen') %>
-
+<% provide(:title, "Aanspassen") %>
 <div id="inhoud">
-	<h1>Spelers aanmaken</h1>
-        <div class="formParagraph">
-	<%= form_for(@speler) do |f| %>
-                <%= render 'error_messages' %>
+  	<h1>aanpassen spelers</h1>
+    <div class="formParagraph">
+	  	<%= form_for(@speler) do |f| %>
+		    <%= render 'error_messages' %>
                 <p><%= f.label :roepnaam %></p>
                 <%= f.text_field :roepnaam, class: 'form-control' %>
                 <p><%= f.label :tussenvoegsel %></p>
@@ -13,11 +12,10 @@
                 <%= f.text_field :achternaam, class: 'form-control' %>
                 <p><%= f.label :school_id, "School" %></p>
                 <%= f.text_field :school_id, class: 'form-control' %>
-                <br /><br />
-		<%= f.submit "Meld aan", class: "submit" %>	
-		
-		<p><%= link_to "Terug naar het overzicht", showSpelers_path, class: "signLink" %></p>
-	<% end %>
+		    <br/><br/>
+		      <%= f.submit "Opslaan", class: "submit" %>
+    	<% end %>
+  	</div>
 </div>
 <div id="inhoudBreak">
 </div>

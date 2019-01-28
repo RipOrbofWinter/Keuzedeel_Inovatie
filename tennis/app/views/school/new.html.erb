@@ -1,0 +1,17 @@
+<% provide(:title, 'Aanmeldingen') %>
+
+<div id="inhoud">
+	<h1>School aanmaken</h1>
+        <div class="formParagraph">
+	<%= form_for(@school) do |f| %>
+                <%= render 'error_messages' %>
+                <p><%= f.label :naam %></p>
+                <%= f.text_field :naam, class: 'form-control' %>
+                <br /><br />
+		<%= f.submit "Meld aan", class: "submit" %>	
+		
+		<p><%= link_to "Terug naar het overzicht", showSchool_path, class: "signLink" %></p>
+	<% end %>
+</div>
+<div id="inhoudBreak">
+</div>

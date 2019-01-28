@@ -1,0 +1,2 @@
+class Aanmeldingen < ApplicationRecord
+end

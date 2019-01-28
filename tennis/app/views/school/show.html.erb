@@ -1,0 +1,15 @@
+<% provide(:title, 'spelerlijst') %>
+
+<div id="inhoud">
+	<div class="post">
+		<table>
+				<tr>
+					<th>Id</th>
+					<th>Naam</th>
+				</tr>
+			<% @school.each do |school| %>
+				<%= render school %>
+			<% end %>
+		</table>
+	</div>
+</div>

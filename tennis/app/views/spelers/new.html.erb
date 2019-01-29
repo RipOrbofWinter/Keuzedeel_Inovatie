@@ -12,7 +12,7 @@
                 <p><%= f.label :achternaam %></p>
                 <%= f.text_field :achternaam, class: 'form-control' %>
                 <p><%= f.label :school_id, "School" %></p>
-                <%= f.text_field :school_id, class: 'form-control' %>
+                <%= collection_select(:speler, :school_id, School.all, :id, :naam, prompt: true) %>
                 <br /><br />
 		<%= f.submit "Meld aan", class: "submit" %>	
 		

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_28_140106) do
+ActiveRecord::Schema.define(version: 2019_01_29_121439) do
 
   create_table "aanmeldingens", force: :cascade do |t|
     t.integer "speler_id"
@@ -55,6 +55,18 @@ ActiveRecord::Schema.define(version: 2019_01_28_140106) do
     t.datetime "created_at", null: false
   end
 
+  create_table "toernoois", force: :cascade do |t|
+    t.text "Omschrijving"
+    t.text "Datum"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tournooistarts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -64,6 +76,18 @@ ActiveRecord::Schema.define(version: 2019_01_28_140106) do
     t.string "remember_digest"
     t.boolean "admin"
     t.index ["email"], name: "index_users_on_email", unique: true
+  end
+
+  create_table "wedstrijds", force: :cascade do |t|
+    t.integer "toernooi_id"
+    t.integer "winaar_id"
+    t.integer "ronde"
+    t.integer "speler1"
+    t.integer "speler2"
+    t.integer "score1"
+    t.integer "score2"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

@@ -1,4 +1,4 @@
-class SchoolController < ApplicationController
+class SchoolsController < ApplicationController
 before_action :admin_user,     only: :destroy
     def show
     	@school = School.all
@@ -25,7 +25,7 @@ before_action :admin_user,     only: :destroy
     @school = School.find(params[:id])
     if @school.update_attributes(school_params)
       flash[:success] = "school aangepast"
-      redirect_to showSchools_path
+      redirect_to showSchool_path
     else
       render 'edit'
     end
@@ -34,7 +34,7 @@ before_action :admin_user,     only: :destroy
   def destroy
     School.find(params[:id]).destroy
     flash[:success] = "User deleted"
-    redirect_to showSchools_path
+    redirect_to showSchool_path
 
   end
       private

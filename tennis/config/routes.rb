@@ -5,21 +5,24 @@ Rails.application.routes.draw do
   	get 	  '/newSpelers',	 to: 'spelers#new'
   	get 	  '/showSpelers',	 to: 'spelers#show'
   	get 	  '/editSpelers',  to: 'spelers#edit'
-  	get    	'/newAan',		   to: 'aanmeldingen#new'
-	  get 	  '/showAan',		   to: 'aanmeldingen#show'
-	  get    	'/newSchool',	   to: 'school#new'
-	  get  	  '/showSchool',	 to: 'school#show'
-	  get   	'/editSchool',	 to: 'school#edit'
- 	  get   	'/signup',  	   to: 'school#new'
+  	get    	'/newAan',		   to: 'aanmeldingens#new'
+	  get 	  '/showAan',		   to: 'aanmeldingens#show'
+	  get    	'/newSchool',	   to: 'schools#new'
+	  get  	  '/showSchool',	 to: 'schools#show'
+	  get   	'/editSchool',	 to: 'schools#edit'
+    get     '/signup',       to: 'schools#new'
+ 	  get   	'/showtournooi', to: 'tournooistarts#show'
     get     '/login',   	   to: 'sessions#new'
   	post    '/login',   	   to: 'sessions#create'
-    post    '/newSpelers',   to: 'speler#create'
-    post    '/newAan',       to: 'aanmeldingen#create'
+    post    '/newSpelers',   to: 'spelers#create'
+    post    '/newAan',       to: 'aanmeldingens#create'
   	post	  '/newSchool',	   to: 'school#create'
   	delete  '/logout',  	   to: 'sessions#destroy'
 
+    post     '/start',        to: 'tournooistarts#start', as: "start"
     resources :users
     resources :schools
-    resources :aanmeldingen
+    resources :aanmeldingens
+    resources :tournooistarts
     resources :spelers
 end

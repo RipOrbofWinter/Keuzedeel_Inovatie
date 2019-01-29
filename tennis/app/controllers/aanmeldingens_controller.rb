@@ -1,7 +1,9 @@
-class AanmeldingenController < ApplicationController
+class AanmeldingensController < ApplicationController
 before_action :admin_user,     only: :destroy
+
     def show
     	@aanmeldingen = Aanmeldingen.all
+      @aanmeldingenStop = Aanmeldingen.first
   	end
 
     def create
@@ -20,7 +22,12 @@ before_action :admin_user,     only: :destroy
   def destroy
     Aanmeldingen.find(params[:id]).destroy
     flash[:success] = "User deleted"
-    redirect_to showSpelers_path
+    redirect_to showAan_path
+
+  def start
+    AanmeldingenStop.first.stop == true;
+    redirect_to showAan_path
+    end
 
   end
       private

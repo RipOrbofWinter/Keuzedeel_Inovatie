@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_27_203815) do
+ActiveRecord::Schema.define(version: 2019_01_29_121439) do
+
+  create_table "aanmeldingens", force: :cascade do |t|
+    t.integer "speler_id"
+    t.integer "toernooi_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -33,25 +40,31 @@ ActiveRecord::Schema.define(version: 2019_01_27_203815) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "scheidsrechter", force: :cascade do |t|
-    t.text "naam", null: false
-    t.text "telefoon"
-  end
-
-  create_table "speler", force: :cascade do |t|
-    t.integer "toernooi_plaats_id"
-    t.text "voornaam", null: false
-    t.text "achternaam", null: false
-    t.text "school", null: false
-  end
-
-  create_table "spelers", force: :cascade do |t|
+  create_table "schools", force: :cascade do |t|
+    t.string "naam"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "toernooi", force: :cascade do |t|
-    t.text "naam", null: false
+  create_table "spelers", force: :cascade do |t|
+    t.integer "school_id", null: false
+    t.text "roepnaam", null: false
+    t.text "tussenvoegsel"
+    t.text "achternaam", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "created_at", null: false
+  end
+
+  create_table "toernoois", force: :cascade do |t|
+    t.text "Omschrijving"
+    t.text "Datum"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tournooistarts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -61,20 +74,20 @@ ActiveRecord::Schema.define(version: 2019_01_27_203815) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.string "remember_digest"
+    t.boolean "admin"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  create_table "wedstrijd", force: :cascade do |t|
-    t.text "toernooi_id", null: false
-    t.integer "scheids_id"
-    t.text "datum"
-    t.text "tijd_begin"
-    t.text "tijd_eind"
-  end
-
-  create_table "wedstrijd_regel", force: :cascade do |t|
-    t.integer "speler_id"
-    t.integer "games"
+  create_table "wedstrijds", force: :cascade do |t|
+    t.integer "toernooi_id"
+    t.integer "winaar_id"
+    t.integer "ronde"
+    t.integer "speler1"
+    t.integer "speler2"
+    t.integer "score1"
+    t.integer "score2"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

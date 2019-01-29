@@ -1,0 +1,11 @@
+<tr>
+	<td><%= school.id %></td>
+	<td><%= school.naam%></td>
+	<td>
+		<%= link_to "aanpasen", edit_school_path(school.id) %>
+	</td>
+	<td>
+		<%= button_to "verwijderen", school, method: :delete, data: 
+					{ confirm: "You sure?" } %>
+	</td>
+</tr>

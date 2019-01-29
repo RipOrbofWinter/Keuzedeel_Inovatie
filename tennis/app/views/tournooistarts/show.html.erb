@@ -1,0 +1,23 @@
+<% provide(:title, 'spelerlijst') %>
+
+<div id="inhoud">
+	<div class="post">
+		<%= button_to "start toernooi", start_path, method: :start %>
+		<table>
+				<tr>
+					<th>Id</th>
+					<th>Tournooi_id</th>
+					<th>ronde</th>
+					<th>speler1</th>
+					<th>speler2</th>
+					<th>score1</th>
+					<th>score2</th>
+					<th>aanpassen</th>
+					<th>verwijderen</th>
+				</tr>
+			<% @wedstrijd.each do |wedstrijd| %>
+				<%= render tournooi %>
+			<% end %>
+		</table>
+	</div>
+</div>

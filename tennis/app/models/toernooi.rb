@@ -1,0 +1,2 @@
+class Toernooi < ApplicationRecord
+end

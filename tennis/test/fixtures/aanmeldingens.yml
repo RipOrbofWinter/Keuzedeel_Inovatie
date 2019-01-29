@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  speler_id: 1
+  toernooi_id: 1
+
+two:
+  speler_id: 1
+  toernooi_id: 1

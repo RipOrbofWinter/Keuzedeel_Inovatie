@@ -1,0 +1,17 @@
+<% provide(:title, 'spelerlijst') %>
+
+<div id="inhoud">
+	<div class="post">
+		<table>
+				<tr>
+					<th>Id</th>
+					<th>Speler id</th>
+					<th>Toernooi id</th>
+					<th>Verwijderen</th>
+				</tr>
+			<% @aanmeldingen.each do |aanmeldingen| %>
+				<%= render aanmeldingen %>
+			<% end %>
+		</table>
+	</div>
+</div>

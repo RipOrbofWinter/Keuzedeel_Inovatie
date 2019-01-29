@@ -1,0 +1,9 @@
+<tr>
+	<td><%= aanmeldingen.id %></td>
+	<td><%= aanmeldingen.speler_id%></td>
+	<td><%= aanmeldingen.toernooi_id%></td>
+	<td>
+		<%= button_to "verwijderen", aanmeldingen, method: :delete, data: 
+					{ confirm: "You sure?" } %>
+	</td>
+</tr>

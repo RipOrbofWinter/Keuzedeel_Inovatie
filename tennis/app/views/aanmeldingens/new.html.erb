@@ -1,0 +1,21 @@
+<% provide(:title, 'Toernooi aanmeldingen') %>
+
+<div id="inhoud">
+	<h1>toernooi aanmeldingen</h1>
+        <div class="formParagraph">
+	<%= form_for(@aanmeldingen) do |f| %>
+                <%= render 'error_messages' %>
+                <p><%= f.label :speler_id %></p>
+                <%= collection_select(:aanmeldingen, :speler_id, Speler.all, :id, :roepnaam, prompt: true) %>
+
+                <p><%= f.label :toernooi_id %></p>
+                <%= collection_select(:aanmeldingen, :toernooi_id, Toernooi.all, :id, :Omschrijving, prompt: true) %>
+
+                <br /><br />
+		<%= f.submit "Meld aan", class: "submit" %>	
+		
+		<p><%= link_to "Terug naar het overzicht", showAan_path, class: "signLink" %></p>
+	<% end %>
+</div>
+<div id="inhoudBreak">
+</div>

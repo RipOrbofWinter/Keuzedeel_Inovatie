@@ -1,0 +1,2 @@
+class Wedstrijd < ApplicationRecord
+end

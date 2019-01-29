@@ -1,0 +1,18 @@
+<% provide(:title, 'spelerlijst') %>
+
+<div id="inhoud">
+	<div class="post">
+		<table>
+				<tr>
+					<th>Id</th>
+					<th>Naam</th>
+					<th>school</th>
+					<th>wijzigen</th>
+					<th>verwijderen</th>
+				</tr>
+			<% @speler.each do |speler| %>
+				<%= render speler %>
+			<% end %>
+		</table>
+	</div>
+</div>
